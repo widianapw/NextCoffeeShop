@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_kasir">
+
+    <fragment
+        android:id="@+id/navigation_kasir"
+        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:label="Cashier"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_produk"
+        android:name="com.example.myapplication.ui.dashboard.DashboardFragment"
+        android:label="Produk"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_kategori"
+        android:name="com.example.myapplication.ui.ui.kategori.KategoriFragment"
+        android:label="Kategori"
+        tools:layout="@layout/kategori_fragment" />
+    <fragment
+        android:id="@+id/navigation_profil"
+        android:name="com.example.myapplication.ui.notifications.NotificationsFragment"
+        android:label="Profil"
+        tools:layout="@layout/fragment_notifications" />
+
+</navigation>

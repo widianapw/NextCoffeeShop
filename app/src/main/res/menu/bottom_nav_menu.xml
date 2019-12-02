@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_kasir"
+        android:icon="@drawable/ic_monetization_on_black_24dp"
+        android:title="Cashier" />
+
+    <item
+        android:id="@+id/navigation_produk"
+        android:icon="@drawable/ic_archive_black_24dp"
+        android:title="Produk" />
+
+    <item
+        android:id="@+id/navigation_kategori"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Kategori" />
+
+    <item
+        android:id="@+id/navigation_profil"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="Profil" />
+
+</menu>
