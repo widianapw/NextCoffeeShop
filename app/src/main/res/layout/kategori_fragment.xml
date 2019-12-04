@@ -10,19 +10,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-    <include layout="@layout/card_kategori"/>
-    <include layout="@layout/card_kategori"/>
-        <include layout="@layout/card_kategori"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_kategori"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/card_kategori">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_add_black_24dp"
+        app:srcCompat="@drawable/ic_add_black_24dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="30dp"
-        android:id="@+id/gaskan"/>
+        android:id="@+id/tambah_kategori"/>
 
 
 

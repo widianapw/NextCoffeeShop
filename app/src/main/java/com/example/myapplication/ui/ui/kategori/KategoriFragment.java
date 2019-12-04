@@ -2,15 +2,14 @@ package com.example.myapplication.ui.ui.kategori;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +17,15 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.myapplication.R;
-import com.example.myapplication.ui.notifications.NotificationsViewModel;
+import com.example.myapplication.adapter.KategoriAdapter;
+import com.example.myapplication.database.AppDatabase;
+import com.example.myapplication.database.AppExecutors;
+import com.example.myapplication.model.Kategori;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.List;
 
 public class KategoriFragment extends Fragment {
 
@@ -33,7 +36,10 @@ public class KategoriFragment extends Fragment {
     LayoutInflater inflater;
     View dialogView;
     ImageView edit;
-    EditText txt_nama;
+    EditText nama;
+    RecyclerView recycler_kategori;
+    KategoriAdapter mAdapter;
+    AppDatabase mDb;
 
     public static KategoriFragment newInstance() {
         return new KategoriFragment();
@@ -44,31 +50,27 @@ public class KategoriFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        kategoriViewModel =
-                ViewModelProviders.of(this).get(KategoriViewModel.class);
-        View root = inflater.inflate(R.layout.kategori_fragment, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
 
-        fab         = (FloatingActionButton) root.findViewById(R.id.gaskan);
+        View root = inflater.inflate(R.layout.kategori_fragment, container, false);
+        fab = (FloatingActionButton) root.findViewById(R.id.tambah_kategori);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DialogForm();
             }
         });
+        mAdapter = new KategoriAdapter(getContext());
+        recycler_kategori = root.findViewById(R.id.recycler_kategori);
+        recycler_kategori.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recycler_kategori.setAdapter(mAdapter);
+        mDb = AppDatabase.getDatabase(getContext());
 
-        edit = (ImageView) root.findViewById(R.id.edit);
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DialogEdit();
-            }
-        });
+
 
         return root;
     }
 
-    private void DialogForm(){
+    private void DialogForm() {
         dialog = new AlertDialog.Builder(getActivity());
         inflater = getLayoutInflater();
         dialogView = inflater.inflate(R.layout.tambah_kategori, null);
@@ -76,19 +78,26 @@ public class KategoriFragment extends Fragment {
         dialog.setCancelable(true);
         dialog.setTitle("Tambah Kategori");
 
-        txt_nama    = (EditText) dialogView.findViewById(R.id.txt_nama);
+        nama = (EditText) dialogView.findViewById(R.id.nama_kategori_tambah);
 
         dialog.setPositiveButton("SUBMIT", new DialogInterface.OnClickListener() {
-
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                final Kategori kategori = new Kategori(
+                        nama.getText().toString()
+                );
+                AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        mDb.kategoriDao().insertKategori(kategori);
+                        retrieveData();
+                    }
+                });
                 dialog.dismiss();
             }
         });
 
         dialog.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
@@ -98,34 +107,27 @@ public class KategoriFragment extends Fragment {
         dialog.show();
     }
 
-    private void DialogEdit(){
-        dialog = new AlertDialog.Builder(getActivity());
-        inflater = getLayoutInflater();
-        dialogView = inflater.inflate(R.layout.tambah_kategori, null);
-        dialog.setView(dialogView);
-        dialog.setCancelable(true);
-        dialog.setTitle("Edit Kategori");
 
-        txt_nama    = (EditText) dialogView.findViewById(R.id.txt_nama);
+    @Override
+    public void onResume() {
+        super.onResume();
+        retrieveData();
+    }
 
-        dialog.setPositiveButton("SUBMIT", new DialogInterface.OnClickListener() {
-
+    public void retrieveData() {
+        mDb = AppDatabase.getDatabase(getContext());
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                dialog.dismiss();
+            public void run() {
+                final List<Kategori> data = mDb.kategoriDao().loadAllKategoris();
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAdapter.setTasks(data);
+                    }
+                });
             }
         });
-
-        dialog.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
     }
 
 }

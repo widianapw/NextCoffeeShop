@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_produk"
-        android:name="com.example.myapplication.ui.dashboard.DashboardFragment"
+        android:name="com.example.myapplication.ui.produk.ProdukFragment"
         android:label="Produk"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_produk" />
 
     <fragment
         android:id="@+id/navigation_kategori"

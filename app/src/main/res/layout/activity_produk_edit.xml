@@ -1,26 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <EditText
         android:layout_margin="20dp"
-        android:id="@+id/et_nama_produk_create"
+        android:id="@+id/et_nama_produk_edit"
         android:hint="Produk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <EditText
         android:layout_margin="20dp"
-        android:id="@+id/et_harga_create"
+        android:id="@+id/et_harga_edit"
         android:hint="Harga"
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <Spinner
-        android:id="@+id/spnKategori_create"
+        android:id="@+id/spnKategori_edit"
         android:layout_width="match_parent"
         android:layout_height="40dp"/>
+
+    <Button
+        android:id="@+id/btn_update_produk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="update"/>
 
 </LinearLayout>

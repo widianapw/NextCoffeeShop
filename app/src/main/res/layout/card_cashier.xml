@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardview_kasir"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -14,6 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="75dp">
         <TextView
+            android:id="@+id/nama_produk_kasir"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Cofeee"
@@ -24,6 +27,7 @@
             android:gravity="center"/>
 
         <TextView
+            android:id="@+id/harga_produk_kasir"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Rp. 10000"

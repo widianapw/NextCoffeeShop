@@ -6,7 +6,7 @@
 
     <EditText
         android:layout_margin="20dp"
-        android:id="@+id/txt_nama"
+        android:id="@+id/nama_kategori_tambah"
         android:hint="Kategori"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
