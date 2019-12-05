@@ -48,7 +48,6 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
         return new MyViewHolder(view);
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.mNama.setText(mKategoriList.get(position).getKategori());

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.R;
 import com.example.myapplication.model.ProdukWithRelations;
 import com.example.myapplication.ui.home.KeranjangEdit;
+import com.example.myapplication.ui.home.KeranjangTambah;
 
 import java.util.List;
 
@@ -62,8 +63,8 @@ public class KasirAdapter extends RecyclerView.Adapter<KasirAdapter.MyViewHolder
             mMainCard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(context, KeranjangEdit.class);
-                    i.putExtra("insert",mProdukList.get(getAdapterPosition()).produk.getId());
+                    Intent i = new Intent(context, KeranjangTambah.class);
+                    i.putExtra("insert", mProdukList.get(getAdapterPosition()).produk.getId());
                     context.startActivity(i);
                 }
             });

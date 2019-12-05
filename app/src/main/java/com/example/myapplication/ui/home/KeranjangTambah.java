@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,31 +14,23 @@ import com.example.myapplication.database.AppExecutors;
 import com.example.myapplication.model.Keranjang;
 import com.example.myapplication.model.KeranjangWithRelations;
 
-public class KeranjangEdit extends AppCompatActivity {
+public class KeranjangTambah extends AppCompatActivity {
     AppDatabase mDb;
     EditText mKuantiti;
     Button mSubmit;
     int mIdProduk;
     Intent intent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_keranjang_edit);
+        setContentView(R.layout.activity_keranjang_tambah);
         mDb = AppDatabase.getDatabase(getApplicationContext());
-        mKuantiti = findViewById(R.id.etKuantiti);
-        mSubmit = findViewById(R.id.btnSaveKuantiti);
         intent = getIntent();
+        mIdProduk = intent.getIntExtra("insert",-1);
+        mKuantiti = findViewById(R.id.etKuantitiTambah);
 
-        mIdProduk = getIntent().getIntExtra("update", -1);
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-            @Override
-            public void run() {
-                KeranjangWithRelations keranjang = mDb.keranjangDao().loadKeranjangById(mIdProduk);
-                setUiData(keranjang);
-            }
-        });
-
+        mSubmit = findViewById(R.id.btnSaveKuantitiTambah);
+        mSubmit = findViewById(R.id.btnSaveKuantitiTambah);
         mSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,26 +48,11 @@ public class KeranjangEdit extends AppCompatActivity {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
-                data.setId(mIdProduk);
-                mDb.keranjangDao().updateKeranjang(data);
+                mDb.keranjangDao().insertKeranjang(data);
                 finish();
             }
         });
 
 
     }
-
-    public void setUiData(final KeranjangWithRelations keranjang) {
-        if (keranjang == null) {
-            return;
-        }
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                mKuantiti = findViewById(R.id.etKuantiti);
-                mKuantiti.setText(String.valueOf(keranjang.keranjang.getQty()));
-            }
-        });
-    }
-
 }
