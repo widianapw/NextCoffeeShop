@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label">
-        <activity android:name=".ui.profile.PasswordEdit"></activity>
+        <activity android:name=".ui.home.KeranjangEdit"></activity>
+        <activity android:name=".ui.profile.PasswordEdit" />
         <activity android:name=".ui.profile.ProfileEdit" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -28,7 +29,6 @@
         <activity android:name=".ui.home.KeranjangBayar" />
         <activity android:name=".ui.home.KeranjangTambah" />
         <activity android:name=".ui.home.KeranjangActivity" />
-        <activity android:name=".ui.home.KeranjangEdit" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" />

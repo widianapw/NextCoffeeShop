@@ -52,7 +52,9 @@ public class ProfileFragment extends Fragment {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.remove(SESSION_STATUS);
                 editor.apply();
+
                 startActivity(new Intent(getContext(), LoginActivity.class));
+
             }
         });
 

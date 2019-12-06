@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ public class KeranjangTambah extends AppCompatActivity {
     Button mSubmit;
     int mIdProduk;
     Intent intent;
+    KeranjangWithRelations keranjangWithRelations;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +50,19 @@ public class KeranjangTambah extends AppCompatActivity {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
-                mDb.keranjangDao().insertKeranjang(data);
+                keranjangWithRelations = mDb.keranjangDao().loadKeranjangByIdProduk(mIdProduk);
+//                Log.e("id_keranjang",""+keranjangWithRelations.keranjang.getId());
+                if (keranjangWithRelations != null){
+                    final Keranjang data = new Keranjang(
+                            mIdProduk,
+                            Integer.parseInt(mKuantiti.getText().toString()) + keranjangWithRelations.keranjang.getQty()
+                    );
+                    data.setId(keranjangWithRelations.keranjang.getId());
+                    mDb.keranjangDao().updateKeranjang(data);
+                }
+                else{
+                    mDb.keranjangDao().insertKeranjang(data);
+                }
                 finish();
             }
         });

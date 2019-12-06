@@ -39,6 +39,7 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
     public void setTasks(List<Kategori> kategoriList) {
         mKategoriList = kategoriList;
         notifyDataSetChanged();
+
     }
 
     @NonNull
@@ -80,6 +81,7 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
                     Intent i = new Intent(context, KategoriEdit.class);
                     i.putExtra("update",idKategori);
                     context.startActivity(i);
+
                 }
             });
 

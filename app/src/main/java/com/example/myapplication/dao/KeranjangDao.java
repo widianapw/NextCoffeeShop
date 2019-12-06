@@ -28,6 +28,9 @@ public interface KeranjangDao {
     @Query("Select * from tb_keranjang where id = :id")
     KeranjangWithRelations loadKeranjangById(int id);
 
+    @Query("Select * from tb_keranjang where id_produk = :idProduk")
+    KeranjangWithRelations loadKeranjangByIdProduk(int idProduk);
+
     @Update
     void updateKeranjang(Keranjang keranjang);
 

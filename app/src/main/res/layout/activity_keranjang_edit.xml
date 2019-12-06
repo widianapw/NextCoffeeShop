@@ -6,18 +6,18 @@
     android:layout_height="match_parent"
     >
     <TextView
-        android:id="@+id/labelKuantiti"
+        android:id="@+id/labelKuantitiEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="kuantiti"/>
     <EditText
-        android:id="@+id/etKuantiti"
-        android:layout_below="@id/labelKuantiti"
+        android:id="@+id/etKuantitiEdit"
+        android:layout_below="@id/labelKuantitiEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button
-        android:id="@+id/btnSaveKuantiti"
-        android:layout_below="@+id/etKuantiti"
+        android:id="@+id/btnSaveKuantitiEdit"
+        android:layout_below="@+id/etKuantitiEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Simpan"/>
