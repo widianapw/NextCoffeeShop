@@ -23,6 +23,11 @@
         android:label="Kategori"
         tools:layout="@layout/kategori_fragment" />
     <fragment
+        android:id="@+id/navigation_report"
+        android:name="com.example.myapplication.ui.ui.report.ReportFragment"
+        android:label="Report"
+        tools:layout="@layout/report_fragment" />
+    <fragment
         android:id="@+id/navigation_profil"
         android:name="com.example.myapplication.ui.profile.ProfileFragment"
         android:label="Profil"

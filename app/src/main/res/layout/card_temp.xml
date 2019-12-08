@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="81dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="5dp"
+        android:minHeight="100dp"
+        app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/edit_kategori"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/hapus_kategori"
+                android:background="#fff"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_edit_black_24dp" />
+
+            <ImageView
+                android:id="@+id/hapus_kategori"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_delete_black_24dp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nama_kategori"
+                style="@style/viewParent.headerText"
+                android:text="Coffee"
+                android:textColor="@color/colorPrimary" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/img_plumping"
+        android:layout_centerVertical="true"
+        android:elevation="13dp"/>
+
+</RelativeLayout>

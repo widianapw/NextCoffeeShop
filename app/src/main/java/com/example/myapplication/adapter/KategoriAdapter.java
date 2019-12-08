@@ -45,7 +45,7 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.card_kategori, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.card_temp, parent, false);
         return new MyViewHolder(view);
     }
 

@@ -15,6 +15,10 @@
         android:id="@+id/navigation_kategori"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="Kategori" />
+    <item
+        android:id="@+id/navigation_report"
+        android:icon="@drawable/ic_assessment_black_24dp"
+        android:title="Report" />
 
     <item
         android:id="@+id/navigation_profil"
