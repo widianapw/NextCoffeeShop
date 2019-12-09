@@ -11,14 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:textStyle="bold"
+        android:textColor="#000"
         android:text="nama_produk"/>
 
     <TextView
-
+        android:textColor="#000"
         android:id="@+id/harga_keranjang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/nama_keranjang"
+        android:layout_below="@+id/nama_keranjang"
         android:padding="5dp"
         android:text="harga"/>
 
@@ -26,11 +28,15 @@
         android:id="@+id/x"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/nama_keranjang"
         android:layout_toRightOf="@id/harga_keranjang"
         android:padding="5dp"
-        android:text="x" />
+        android:text="x"
+        android:textColor="#000"/>
 
     <TextView
+        android:textColor="#000"
+        android:layout_below="@+id/nama_keranjang"
         android:id="@+id/qty_keranjang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,6 +47,8 @@
         />
 
     <TextView
+        android:textColor="#000"
+        android:layout_below="@+id/nama_keranjang"
         android:id="@+id/subtotal_keranjang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,16 +58,19 @@
 
 
     <Button
+        android:layout_centerInParent="true"
         android:id="@+id/button_edit_keranjang"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/subtotal_keranjang"
-        android:text="Edit"/>
+        android:layout_toLeftOf="@id/button_delete_keranjang"
+        android:text="Edit"
+        />
 
     <Button
+        android:layout_centerInParent="true"
         android:id="@+id/button_delete_keranjang"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/button_edit_keranjang"
+        android:layout_alignParentRight="true"
         android:text="Delete" />
 </RelativeLayout>

@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ui.kategori.KategoriEdit">
+    tools:context=".ui.ui.kategori.KategoriEdit"
+    android:layout_margin="10dp">
     <TextView
         android:id="@+id/labelKategori"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="kategori"/>
+        android:text="Kategori"
+        style="@style/viewParent.headerText"/>
     <EditText
+
         android:id="@+id/etKategori"
         android:layout_below="@id/labelKategori"
         android:layout_width="match_parent"
@@ -20,5 +23,8 @@
         android:layout_below="@+id/etKategori"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UPDATE"/>
+        android:text="UPDATE"
+        android:textColor="#fff"
+        android:padding="10dp"
+        android:background="@drawable/btnstyle"/>
 </RelativeLayout>

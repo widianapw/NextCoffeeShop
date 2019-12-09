@@ -1,22 +1,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="20dp">
 
     <EditText
-        android:layout_margin="20dp"
+        android:layout_margin="5dp"
         android:id="@+id/et_nama_produk_edit"
         android:hint="Produk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <EditText
-        android:layout_margin="20dp"
+        android:layout_margin="5dp"
         android:id="@+id/et_harga_edit"
         android:hint="Harga"
         android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
+    <TextView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kategori"
+        android:textSize="20sp"/>
     <Spinner
         android:id="@+id/spnKategori_edit"
         android:layout_width="match_parent"
@@ -26,6 +33,9 @@
         android:id="@+id/btn_update_produk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="update"/>
+        android:text="update"
+        android:textColor="#fff"
+        android:padding="10dp"
+        android:background="@drawable/btnstyle"/>
 
 </LinearLayout>

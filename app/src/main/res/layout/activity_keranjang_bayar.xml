@@ -1,69 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".features.kasir.keranjang.bayar_keranjang.KeranjangBayar"
-
+    android:layout_margin="10dp"
     >
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/labellUang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Uang :"/>
-        <EditText
-            android:id="@+id/etUang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            />
-    </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-        <TextView
-            android:id="@+id/labelTotalBelanja"
-            android:layout_width="wrap_content"
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/labellUang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Uang"
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    style="@style/viewParent.headerText"/>
+                <EditText
+                    android:id="@+id/etUang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    style="@style/viewParent.headerText"
+                    />
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/labelTotalBelanja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Belanja "
+                    style="@style/viewParent.headerText"
+                    android:padding="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=": "
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:id="@+id/tv_total_belanja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 100"
+                    style="@style/viewParent.headerText"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kembalian    "
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=": "
+                    style="@style/viewParent.headerText"/>
+                <TextView
+                    android:id="@+id/tv_uang_kembalian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100"
+                    style="@style/viewParent.headerText"/>
+            </TableRow>
+        </TableLayout>
+        <Button
+            android:layout_below="@id/table"
+            android:id="@+id/button_bayar_final"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total Belanja"/>
+            android:text="Bayar"
+            android:layout_margin="20dp"
+            android:textColor="#fff"
+            android:padding="10dp"
+            android:background="@drawable/btnstyle"/>
+    </RelativeLayout>
 
-        <TextView
-            android:id="@+id/tv_total_belanja"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rp 100">
-        </TextView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kembalian"/>
-        <TextView
-            android:id="@+id/tv_uang_kembalian"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="rp 100"></TextView>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button_bayar_final"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bayar"/>
-
-
-</LinearLayout>
+</RelativeLayout>

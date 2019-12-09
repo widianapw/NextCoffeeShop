@@ -45,7 +45,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.MyVi
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.card_keranjang, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_keranjang, parent, false);
         return new MyViewHolder(view);
     }
 
@@ -68,7 +68,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.MyVi
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView mNama, mHarga, mSub, mQty;
-        ImageView mDelete, mEdit;
+        Button mDelete, mEdit;
 
         MyViewHolder(@NonNull final View itemView) {
             super(itemView);
