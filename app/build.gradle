@@ -52,6 +52,7 @@ dependencies {
 
     //material design edit text
     implementation 'com.github.florent37:materialtextfield:1.0.7'
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 
 
 }
