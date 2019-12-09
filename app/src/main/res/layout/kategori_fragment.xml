@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:cropToPadding="true"
-                android:src="@drawable/hero_image"
+                android:src="@drawable/coffe_shop"
                 android:contentDescription="TODO" />
 
             <TextView

@@ -19,9 +19,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
+                android:contentDescription="TODO"
                 android:cropToPadding="true"
-                android:src="@drawable/hero_image"
-                android:contentDescription="TODO" />
+                android:src="@drawable/coffe_shop" />
 
             <TextView
                 android:text="Produk"

@@ -91,7 +91,7 @@
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/img_plumping"
+        android:src="@drawable/fastfood"
         android:layout_centerVertical="true"
         android:elevation="13dp"/>
 
