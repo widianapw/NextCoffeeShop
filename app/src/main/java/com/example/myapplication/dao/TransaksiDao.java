@@ -15,4 +15,6 @@ public interface TransaksiDao {
 
     @Query("Select max(id) as idTerbesar from tb_transaksi")
     MaxTransaksi getMaxTransaksi();
+
+
 }

@@ -114,16 +114,9 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
                         }
                     });
                     sDialog.show();
-
                 }
             });
 
-
         }
     }
-
-
-
-
-
 }
