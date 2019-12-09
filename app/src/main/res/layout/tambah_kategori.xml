@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<!--    <EditText-->
-<!--        android:layout_margin="20dp"-->
-<!--        android:id="@+id/nama_kategori_tambah"-->
-<!--        android:hint="Kategori"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        />-->
-    <com.rengwuxian.materialedittext.MaterialEditText
+    <EditText
+        android:layout_margin="20dp"
+        android:id="@+id/nama_kategori_tambah"
+        android:hint="Kategori"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:hint="ADD Kategori"
         android:textCursorDrawable="@drawable/text_cursor_cyan"
         app:met_baseColor="@android:color/white"
         app:met_floatingLabel="highlight"
         app:met_maxCharacters="20"
         app:met_primaryColor="?colorAccent" />
+=======
+        />
+
+>>>>>>> parent of 48542d8... tambah kategori
 
 </LinearLayout>
