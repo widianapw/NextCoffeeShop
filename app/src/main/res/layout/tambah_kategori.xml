@@ -10,31 +10,7 @@
         android:hint="Kategori"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        android:hint="ADD Kategori"
-        android:textCursorDrawable="@drawable/text_cursor_cyan"
-        app:met_baseColor="@android:color/white"
-        app:met_floatingLabel="highlight"
-        app:met_maxCharacters="20"
-        app:met_primaryColor="?colorAccent" />
-=======
         />
 
->>>>>>> parent of 48542d8... tambah kategori
-=======
-        />
-
->>>>>>> parent of 48542d8... tambah kategori
-=======
-        />
-
->>>>>>> parent of 48542d8... tambah kategori
-=======
-        />
-
->>>>>>> parent of 48542d8... tambah kategori
 
 </LinearLayout>
