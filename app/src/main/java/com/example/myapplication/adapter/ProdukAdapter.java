@@ -17,6 +17,7 @@ import com.example.myapplication.database.AppExecutors;
 import com.example.myapplication.model.Produk;
 import com.example.myapplication.model.ProdukWithRelations;
 import com.example.myapplication.ui.produk.ProdukEdit;
+import com.example.myapplication.ui.produk.ProdukFragment;
 
 import java.util.List;
 
@@ -26,9 +27,11 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
     public Context context;
     List<ProdukWithRelations> mProdukList;
     AppDatabase mDb;
+    ProdukFragment produkFragment;
 
-    public ProdukAdapter(Context context) {
+    public ProdukAdapter(Context context, ProdukFragment produkFragment) {
         this.context = context;
+        this.produkFragment = produkFragment;
     }
 
     @NonNull
@@ -89,11 +92,9 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                                 @Override
                                 public void run() {
                                     mDb.produkDao().delete(produk);
-                                    mProdukList.remove(getAdapterPosition());
-
+                                    produkFragment.retrieveData();
                                 }
                             });
-
                             sDialog.dismissWithAnimation();
                         }
                     });

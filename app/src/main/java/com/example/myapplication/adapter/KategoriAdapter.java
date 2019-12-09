@@ -32,8 +32,9 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
     private AppDatabase mDb;
     private KategoriFragment kategoriFragment;
 
-    public KategoriAdapter(Context context) {
+    public KategoriAdapter(Context context, KategoriFragment kategoriFragment) {
         this.context = context;
+        this.kategoriFragment = kategoriFragment;
     }
 
     public void setTasks(List<Kategori> kategoriList) {
@@ -100,9 +101,9 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
                                 @Override
                                 public void run() {
                                     mDb.kategoriDao().delete(kategori);
+//                                    kategoriFragment.retrieveData();
                                 }
                             });
-
                             sDialog.dismissWithAnimation();
                         }
                     });

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,7 @@ import com.example.myapplication.model.Kategori;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
+import java.util.Objects;
 
 public class KategoriFragment extends Fragment {
 
@@ -59,7 +61,7 @@ public class KategoriFragment extends Fragment {
                 DialogForm();
             }
         });
-        mAdapter = new KategoriAdapter(getContext());
+        mAdapter = new KategoriAdapter(getContext(), this);
         recycler_kategori = root.findViewById(R.id.recycler_kategori);
         recycler_kategori.setLayoutManager(new LinearLayoutManager(getActivity()));
         recycler_kategori.setAdapter(mAdapter);
@@ -120,12 +122,14 @@ public class KategoriFragment extends Fragment {
             @Override
             public void run() {
                 final List<Kategori> data = mDb.kategoriDao().loadAllKategoris();
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mAdapter.setTasks(data);
-                    }
-                });
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mAdapter.setTasks(data);
+                        }
+                    });
+                }
             }
         });
     }

@@ -1,6 +1,7 @@
 package com.example.myapplication.ui.produk;
 
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,6 +35,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static com.example.myapplication.MyApplication.getContext;
 
@@ -63,7 +65,7 @@ public class ProdukFragment extends Fragment {
                 ViewModelProviders.of(this).get(DashboardViewModel.class);
         View root = inflater.inflate(R.layout.fragment_produk, container, false);
         recycler_produk = root.findViewById(R.id.recycler_produk);
-        mAdapter = new ProdukAdapter(getContext());
+        mAdapter = new ProdukAdapter(getContext(), this);
 
         recycler_produk.setLayoutManager(new LinearLayoutManager(getActivity()));
         recycler_produk.setAdapter(mAdapter);
@@ -138,12 +140,14 @@ public class ProdukFragment extends Fragment {
             @Override
             public void run() {
                 final List<ProdukWithRelations> data = mDb.produkDao().loadAllProduks();
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mAdapter.setTasks(data);
-                    }
-                });
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mAdapter.setTasks(data);
+                        }
+                    });
+                }
             }
         });
     }
