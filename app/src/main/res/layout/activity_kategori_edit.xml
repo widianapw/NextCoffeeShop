@@ -5,20 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ui.kategori.KategoriEdit">
-    <TextView
-        android:id="@+id/labelKategori"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="kategori"/>
-    <EditText
-        android:id="@+id/etKategori"
-        android:layout_below="@id/labelKategori"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnUpdateKategori"
-        android:layout_below="@+id/etKategori"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="UPDATE"/>
+        android:layout_height="wrap_content">
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:mtf_labelColor="#666"
+            app:mtf_image="@drawable/ic_developer_board_black_24dp"
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kategori"
+                android:id="@+id/labelKategori"
+                android:textColor="#333"
+                android:textSize="15sp" />
+
+        </com.github.florent37.materialtextfield.MaterialTextField>
+        <!--    <TextView-->
+        <!--        android:id="@+id/labelKategori"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="kategori"/>-->
+        <!--    <EditText-->
+        <!--        android:id="@+id/etKategori"-->
+        <!--        android:layout_below="@id/labelKategori"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"/>-->
+        <Button
+            android:id="@+id/btnUpdateKategori"
+            android:layout_below="@+id/etKategori"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UPDATE"/>
+    </LinearLayout>
+
 </RelativeLayout>
