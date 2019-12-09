@@ -1,128 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/cardview_light_background"
     android:layout_height="match_parent"
     >
-
-    <androidx.core.widget.NestedScrollView
+    <RelativeLayout
+        android:layout_margin="30dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <RelativeLayout
+            android:id="@+id/rl_terlaris"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <RelativeLayout
-                android:id="@+id/headerLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/reports_header_bk"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="20dp"
-                android:paddingTop="60dp">
+                android:id="@+id/rl_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/cog"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/report"
+                    android:scaleType="centerCrop">
+                </ImageView>
 
                 <TextView
-                    android:id="@+id/dateTextView"
-                    android:layout_width="match_parent"
-                    android:textAlignment="center"
-                    android:layout_height="wrap_content"
-                    android:text="01 April 2017 to 01 April 2019"
-                    android:layout_alignParentTop="true"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/whiteTextColor"/>
-
-
-                <TextView
-                    android:id="@+id/salesHeaderTextView"
-                    android:text="Total Sale"
-                    android:layout_marginTop="30dp"
-                    style="@style/reportContentText" />
-
-                <TextView
-                    style="@style/viewParent.headerText"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="@color/whiteTextColor"
-                    android:layout_below="@id/salesHeaderTextView"
-                    android:text="$15,990.00"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="70dp"/>
+                    android:id="@+id/someting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/cog"
+                    android:text="Hi There,"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="10pt"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp" />
 
+                <View
+                    android:layout_below="@id/someting"
+                    android:id="@+id/spacing"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/spacing_medium" />
+
+                <TextView
+                    android:layout_below="@+id/spacing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/cog"
+                    android:text="Here's Your Monthly Report"
+                    android:textAlignment="center"
+                    android:textColor="@color/overlay_dark_80"
+                    android:textSize="8.5pt"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
-            <LinearLayout
-                android:id="@+id/cardLayout"
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/rl_heading"
+                android:id="@+id/label_item_terlaris"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/headerLayout"
-                android:layout_marginTop="-80dp">
+                android:textSize="8pt"
+                android:textStyle="bold"
+                android:textColor="@color/overlay_dark_80"
+                android:text="Item Terlaris" />
 
-                <androidx.cardview.widget.CardView
-                    app:cardCornerRadius="16dp"
-                    app:cardBackgroundColor="@color/whiteTextColor"
-                    style="@style/reportsCardStyle">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/reportContentText"
-                            android:textColor="#79D0A3"
-                            android:text="This Month"/>
-
-                        <TextView
-                            style="@style/viewParent.headerText"
-                            android:textSize="27sp"
-                            android:text="$5,990.00"/>
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    app:cardCornerRadius="16dp"
-                    app:cardBackgroundColor="@color/whiteTextColor"
-                    style="@style/reportsCardStyle">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            style="@style/reportContentText"
-                            android:textColor="#79D0A3"
-                            android:text="This Week"/>
-
-                        <TextView
-                            style="@style/viewParent.headerText"
-                            android:textSize="27sp"
-                            android:text="$200.00"/>
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:id="@+id/ly_terlaris"
+                android:layout_below="@id/label_item_terlaris"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/cardLayout"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <include layout="@layout/card_report"/>
-                <include layout="@layout/card_report"/>
-                <include layout="@layout/card_report"/>
-                <include layout="@layout/card_report"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Nama Item"
+                    android:textSize="6pt"
+                    android:textColor="@color/overlay_dark_80"
+                    android:textStyle="bold">
+
+                </TextView>
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jumlah"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/overlay_dark_80"
+                    android:textSize="6pt"
+                    android:textStyle="bold">
+
+                </TextView>
 
             </LinearLayout>
 
+            <ImageView
+                android:layout_below="@+id/ly_terlaris"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:background="@color/gold_60"></ImageView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="10dp"
+                android:id="@+id/recycler_terlaris"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ly_terlaris" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_report"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_terlaris">
+
+            <TextView
+                android:id="@+id/label_report_tahun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="7pt"
+                android:text="Penjualan Perbulan"
+                android:textColor="@color/overlay_dark_80"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:id="@+id/ly_report"
+                android:layout_below="@+id/label_report_tahun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Bulan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/overlay_dark_80"
+                    android:textSize="6pt"></TextView>
+                <TextView
+                    android:text="Total"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/overlay_dark_80"
+                    android:textSize="6pt">
+
+                </TextView>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_below="@+id/ly_report"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:background="@color/gold_60"></ImageView>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="10dp"
+                android:id="@+id/recycler_report_tahun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ly_report" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prima Coffee"
+                android:layout_alignParentBottom="true"
+                android:textStyle="bold"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/overlay_dark_40"
+                android:layout_centerHorizontal="true"
+                />
 
         </RelativeLayout>
-    </androidx.core.widget.NestedScrollView>
 
-</RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

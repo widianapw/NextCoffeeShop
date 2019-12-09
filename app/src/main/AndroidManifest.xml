@@ -15,11 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label">
-        <activity android:name=".ui.Report"></activity>
         <activity android:name=".ui.home.KeranjangEdit" />
         <activity android:name=".ui.profile.PasswordEdit" />
         <activity android:name=".ui.profile.ProfileEdit" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

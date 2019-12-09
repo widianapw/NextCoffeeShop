@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,6 +79,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void run() {
                 user = mDb.userDao().getUser(id_user);
+                Log.e("user",""+user);
                 mUsername.setText(user.getUsername());
                 mName.setText(user.getNama());
             }

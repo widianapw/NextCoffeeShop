@@ -1,105 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="81dp"
         android:layout_margin="5dp"
         android:minHeight="100dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="2dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-        <RelativeLayout
-            android:id="@+id/buttonbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/button_edit_keranjang"
+            <RelativeLayout
+                android:id="@+id/buttonbutton"
                 android:layout_width="wrap_content"
-                android:layout_height="120dp"
-                android:layout_toLeftOf="@id/button_delete_keranjang"
-                android:padding="5dp"
-                app:srcCompat="@drawable/ic_edit_black_24dp" />
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/button_delete_keranjang"
-                android:layout_width="wrap_content"
-                android:layout_height="120dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerInParent="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
-                android:padding="5dp"
-                app:srcCompat="@drawable/ic_delete_black_24dp" />
-        </RelativeLayout>
+                <ImageView
+                    android:id="@+id/button_edit_keranjang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:layout_toLeftOf="@id/button_delete_keranjang"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ic_edit_black_24dp" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
-            android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/button_delete_keranjang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ic_launcher_background" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/nama_keranjang"
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:textStyle="bold"
-                android:textColor="#000"
-                android:text="nama_produk"/>
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:textColor="#000"
-                android:id="@+id/harga_keranjang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/nama_keranjang"
-                android:padding="5dp"
-                android:text="harga"/>
+                <TextView
+                    android:id="@+id/nama_keranjang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="nama_produk"
+                    android:textColor="#000"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/x"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/nama_keranjang"
-                android:layout_toRightOf="@id/harga_keranjang"
-                android:padding="5dp"
-                android:text="x"
-                android:textColor="#000"/>
+                <TextView
+                    android:id="@+id/harga_keranjang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nama_keranjang"
+                    android:padding="5dp"
+                    android:text="harga"
+                    android:textColor="#000" />
 
-            <TextView
-                android:textColor="#000"
-                android:layout_below="@+id/nama_keranjang"
-                android:id="@+id/qty_keranjang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/x"
-                android:padding="5dp"
-                android:text="qty"
+                <TextView
+                    android:id="@+id/x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nama_keranjang"
+                    android:layout_toRightOf="@id/harga_keranjang"
+                    android:padding="5dp"
+                    android:text="x"
+                    android:textColor="#000" />
 
-                />
+                <TextView
+                    android:id="@+id/qty_keranjang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nama_keranjang"
+                    android:layout_toRightOf="@+id/x"
+                    android:padding="5dp"
+                    android:text="qty"
+                    android:textColor="#000"
 
-            <TextView
-                android:textColor="#000"
-                android:layout_below="@+id/nama_keranjang"
-                android:id="@+id/subtotal_keranjang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/qty_keranjang"
-                android:padding="5dp"
-                android:text="Total" />
+                    />
+
+                <TextView
+                    android:id="@+id/subtotal_keranjang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nama_keranjang"
+                    android:layout_toRightOf="@id/qty_keranjang"
+                    android:padding="5dp"
+                    android:text="Total"
+                    android:textColor="#000" />
 
 
-        </RelativeLayout>
+            </RelativeLayout>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

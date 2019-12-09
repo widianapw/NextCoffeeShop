@@ -83,7 +83,7 @@ public class KeranjangBayar extends AppCompatActivity {
     }
 
     public void onSubmit() {
-        final String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+        final String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             final Transaksi data = new Transaksi(
                     1, date
