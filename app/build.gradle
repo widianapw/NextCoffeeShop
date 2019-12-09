@@ -50,7 +50,7 @@ dependencies {
     //Dialog
     implementation 'com.github.f0ris.sweetalert:library:1.5.1'
 
-    //materialrr design edit text
+    //material design edit text
     implementation 'com.github.florent37:materialtextfield:1.0.7'
 
 
