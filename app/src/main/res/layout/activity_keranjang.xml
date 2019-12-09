@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,9 +12,12 @@
         >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Detail Item">
+            android:text="Detail Item"
+            android:textStyle="bold"
+            android:textSize="20sp">
 
         </TextView>
 
@@ -29,10 +32,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BAYAR"
-            android:fontFamily="sans-serif-black"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:textColor="#fff"
+            android:background="@drawable/btnstyle"
             />
 
     </LinearLayout>
 
 
-</ScrollView>
+</RelativeLayout>

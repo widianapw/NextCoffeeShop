@@ -1,65 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/list_keranjang"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="20dp">
+    android:layout_margin="5dp"
+    android:padding="10dp">
 
-
-    <TextView
-        android:id="@+id/nama_keranjang"
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#fff"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:text="nama_produk"></TextView>
+        android:layout_height="wrap_content">
 
-    <TextView
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        android:id="@+id/harga_keranjang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/nama_keranjang"
-        android:padding="5dp"
-        android:text="harga"></TextView>
+            <TextView
+                android:id="@+id/nama_keranjang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:text="nama_produk"/>
 
-    <TextView
-        android:id="@+id/x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/harga_keranjang"
-        android:padding="5dp"
-        android:text="x" />
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/harga_keranjang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nama_keranjang"
+                android:padding="5dp"
+                android:text="harga"/>
 
-    <TextView
-        android:id="@+id/qty_keranjang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/x"
-        android:padding="5dp"
-        android:text="qty"
+            <TextView
+                android:id="@+id/x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nama_keranjang"
+                android:layout_toRightOf="@id/harga_keranjang"
+                android:padding="5dp"
+                android:text="x"
+                android:textColor="#000"/>
 
-        />
+            <TextView
+                android:textColor="#000"
+                android:layout_below="@+id/nama_keranjang"
+                android:id="@+id/qty_keranjang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/x"
+                android:padding="5dp"
+                android:text="qty"
 
-    <TextView
-        android:id="@+id/subtotal_keranjang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/qty_keranjang"
-        android:padding="5dp"
-        android:text="Total" />
+                />
+
+            <TextView
+                android:textColor="#000"
+                android:layout_below="@+id/nama_keranjang"
+                android:id="@+id/subtotal_keranjang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/qty_keranjang"
+                android:padding="5dp"
+                android:text="Total" />
 
 
-    <Button
-        android:id="@+id/button_edit_keranjang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/subtotal_keranjang"
-        android:text="Edit"/>
+            <ImageView
+                android:id="@+id/button_delete_keranjang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                app:srcCompat="@drawable/ic_delete_black_24dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/todo1"
+                android:layout_alignParentEnd="true" />
 
-    <Button
-        android:id="@+id/button_delete_keranjang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/button_edit_keranjang"
-        android:text="Delete" />
+            <ImageView
+                android:id="@+id/button_edit_keranjang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/button_delete_keranjang"
+                app:srcCompat="@drawable/ic_edit_black_24dp"
+                android:contentDescription="@string/todo"
+                android:layout_toStartOf="@id/button_delete_keranjang" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
 </RelativeLayout>

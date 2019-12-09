@@ -77,7 +77,6 @@ public class ProfileFragment extends Fragment {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
-
                 user = mDb.userDao().getUser(id_user);
                 mUsername.setText(user.getUsername());
                 mName.setText(user.getNama());

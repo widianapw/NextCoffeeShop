@@ -14,6 +14,7 @@
         tools:listitem="@layout/card_cashier" />
 
     <LinearLayout
+        android:padding="5dp"
         android:id="@+id/kontainer_kasir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,17 +22,24 @@
         android:orientation="vertical">
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <TextView
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Jumlah Item :" />
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Rp. " />
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/qty_kasir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -39,25 +47,38 @@
         </LinearLayout>
 
         <LinearLayout
+            android:gravity="center"
+            android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total Harga :" />
+                android:text="Total Harga :"
+                android:textStyle="bold"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Rp. " />
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/total_kasir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0" />
         </LinearLayout>
         <Button
+            android:layout_gravity="center"
             android:id="@+id/btnDetailKeranjang"
             android:layout_width="wrap_content"
+            android:textColor="#fff"
             android:layout_height="wrap_content"
+            android:background="@drawable/btnstyle"
             android:text="Detail Item"
             />
     </LinearLayout>

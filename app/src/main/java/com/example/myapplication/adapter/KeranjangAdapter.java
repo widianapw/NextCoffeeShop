@@ -67,7 +67,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.MyVi
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView mNama, mHarga, mSub, mQty;
-        Button mEdit, mDelete;
+        ImageView mEdit, mDelete;
 
         MyViewHolder(@NonNull final View itemView) {
             super(itemView);
