@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -12,12 +10,8 @@
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp"
-        android:background="@drawable/mantap"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="50dp"
+        android:background="@drawable/mantap"/>
 
     <EditText
         android:id="@+id/etUsernameRegister"
@@ -32,9 +26,7 @@
         android:gravity="center_vertical"
         android:hint="Username"
         android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo" />
+        android:layout_below="@id/logo"/>
 
     <EditText
         android:id="@+id/etPasswordRegister"
@@ -50,10 +42,7 @@
         android:gravity="center_vertical"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/etUsernameRegister"
-        app:layout_constraintStart_toStartOf="@+id/etUsernameRegister"
-        app:layout_constraintTop_toBottomOf="@+id/etUsernameRegister" />
+        android:textSize="15dp"/>
 
     <EditText
         android:id="@+id/etNamaRegister"
@@ -68,9 +57,7 @@
         android:gravity="center_vertical"
         android:hint="Name"
         android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="@id/etPasswordRegister"
-        app:layout_constraintStart_toStartOf="@id/etPasswordRegister"
-        app:layout_constraintTop_toBottomOf="@id/etPasswordRegister" />
+        android:layout_below="@id/etPasswordRegister"/>
 
     <EditText
         android:id="@+id/etTeleponRegister"
@@ -86,9 +73,7 @@
         android:hint="Phone"
         android:inputType="phone"
         android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="@id/etNamaRegister"
-        app:layout_constraintStart_toStartOf="@id/etNamaRegister"
-        app:layout_constraintTop_toBottomOf="@id/etNamaRegister" />
+        android:layout_below="@id/etNamaRegister"/>
 
     <Button
         android:id="@+id/btnRegister"
@@ -101,9 +86,6 @@
         android:background="@drawable/tombol"
         android:text="SIGN UP"
         android:textColor="#ffff"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/etTeleponRegister"
-        app:layout_constraintStart_toStartOf="@+id/etTeleponRegister"
-        app:layout_constraintTop_toBottomOf="@+id/etTeleponRegister"/>
+        android:textStyle="bold"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
