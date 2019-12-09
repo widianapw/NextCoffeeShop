@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -67,7 +68,7 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.MyVi
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView mNama, mHarga, mSub, mQty;
-        ImageView mEdit, mDelete;
+        Button mDelete, mEdit;
 
         MyViewHolder(@NonNull final View itemView) {
             super(itemView);

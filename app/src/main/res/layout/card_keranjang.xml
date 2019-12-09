@@ -9,27 +9,28 @@
         android:layout_height="81dp"
         android:layout_margin="5dp"
         android:minHeight="100dp"
-        app:cardBackgroundColor="#fff"
         app:cardCornerRadius="16dp"
         app:cardElevation="2dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
 
         <RelativeLayout
+            android:id="@+id/buttonbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/edit_kategori"
+                android:id="@+id/button_edit_keranjang"
                 android:layout_width="wrap_content"
                 android:layout_height="120dp"
-                android:layout_centerInParent="true"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@id/hapus_kategori"
-                android:background="#fff"
+                android:layout_toLeftOf="@id/button_delete_keranjang"
                 android:padding="5dp"
                 app:srcCompat="@drawable/ic_edit_black_24dp" />
 
             <ImageView
-                android:id="@+id/hapus_kategori"
+                android:id="@+id/button_delete_keranjang"
                 android:layout_width="wrap_content"
                 android:layout_height="120dp"
                 android:layout_alignParentRight="true"
@@ -40,22 +41,66 @@
                 app:srcCompat="@drawable/ic_delete_black_24dp" />
         </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="5dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/nama_kategori"
-                style="@style/viewParent.headerText"
-                android:text="Coffee"
-                android:textColor="@color/colorPrimary" />
+                android:id="@+id/nama_keranjang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:text="nama_produk"/>
+
+            <TextView
+                android:textColor="#000"
+                android:id="@+id/harga_keranjang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nama_keranjang"
+                android:padding="5dp"
+                android:text="harga"/>
+
+            <TextView
+                android:id="@+id/x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nama_keranjang"
+                android:layout_toRightOf="@id/harga_keranjang"
+                android:padding="5dp"
+                android:text="x"
+                android:textColor="#000"/>
+
+            <TextView
+                android:textColor="#000"
+                android:layout_below="@+id/nama_keranjang"
+                android:id="@+id/qty_keranjang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/x"
+                android:padding="5dp"
+                android:text="qty"
+
+                />
+
+            <TextView
+                android:textColor="#000"
+                android:layout_below="@+id/nama_keranjang"
+                android:id="@+id/subtotal_keranjang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/qty_keranjang"
+                android:padding="5dp"
+                android:text="Total" />
 
 
-        </LinearLayout>
-
+        </RelativeLayout>
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
 
