@@ -139,6 +139,7 @@ public class ProdukFragment extends Fragment {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
+                Log.e("aktiviti",""+getActivity());
                 final List<ProdukWithRelations> data = mDb.produkDao().loadAllProduks();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                     Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {

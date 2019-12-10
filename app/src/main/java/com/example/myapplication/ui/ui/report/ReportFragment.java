@@ -75,7 +75,6 @@ public class ReportFragment extends Fragment {
 //                    public void run() {
                         final List<DetailTransaksiDao.Terlaris> data = mDb.detailTransaksiDao().readDataTerlaris();
                         mAdapter.setTasks(data);
-
                         final List<DetailTransaksiDao.ReportTahun> data1 = mDb.detailTransaksiDao().reportTahun();
                         Log.e("da",""+data1);
                         mAdapterTahun.setTasksReport(data1);

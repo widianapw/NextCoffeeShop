@@ -6,7 +6,7 @@
     android:layout_marginBottom="20dp">
 
     <LinearLayout
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -15,7 +15,9 @@
             android:id="@+id/bulan_report_tahun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="#000"
             android:text="Bulan"></TextView>
 
         <TextView
@@ -24,7 +26,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/bulan_report_tahun"
-
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="#000"
             android:textAlignment="center"
             android:text="jumlah"></TextView>
     </LinearLayout>

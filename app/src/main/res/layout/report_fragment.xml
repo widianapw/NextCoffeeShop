@@ -36,7 +36,7 @@
                     android:layout_toRightOf="@+id/cog"
                     android:text="Hi There,"
                     android:textAlignment="center"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="10pt"
                     android:textStyle="bold"
                     android:layout_marginLeft="10dp" />
@@ -57,7 +57,8 @@
                     android:textAlignment="center"
                     android:textColor="@color/overlay_dark_80"
                     android:textSize="8.5pt"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp" />
 
             </RelativeLayout>
 
@@ -69,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="8pt"
                 android:textStyle="bold"
-                android:textColor="@color/overlay_dark_80"
+                android:textColor="@color/colorPrimary"
                 android:text="Item Terlaris" />
 
 
@@ -133,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="7pt"
                 android:text="Penjualan Perbulan"
-                android:textColor="@color/overlay_dark_80"
+                android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 />
 

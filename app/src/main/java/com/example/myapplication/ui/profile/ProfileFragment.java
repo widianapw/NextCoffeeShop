@@ -46,6 +46,13 @@ public class ProfileFragment extends Fragment {
         mName = root.findViewById(R.id.tvNama);
         btnEditProfil = root.findViewById(R.id.btnEditProfil);
         btnLogout = root.findViewById(R.id.btnLogout);
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                user = mDb.userDao().getUser(id_user);
+                setUiData(user);
+            }
+        });
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +65,6 @@ public class ProfileFragment extends Fragment {
 
             }
         });
-
         btnEditProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,21 +74,8 @@ public class ProfileFragment extends Fragment {
         return root;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        retrieveData();
-    }
-
-    public void retrieveData(){
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-            @Override
-            public void run() {
-                user = mDb.userDao().getUser(id_user);
-                Log.e("user",""+user);
-                mUsername.setText(user.getUsername());
-                mName.setText(user.getNama());
-            }
-        });
+    private void setUiData(User user){
+        mUsername.setText(user.getUsername());
+        mName.setText(user.getNama());
     }
 }

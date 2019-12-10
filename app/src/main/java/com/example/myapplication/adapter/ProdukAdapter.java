@@ -92,7 +92,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                                 @Override
                                 public void run() {
                                     mDb.produkDao().delete(produk);
-                                    produkFragment.retrieveData();
+//                                    produkFragment.retrieveData();
                                 }
                             });
                             sDialog.dismissWithAnimation();

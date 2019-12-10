@@ -101,7 +101,7 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
                                 @Override
                                 public void run() {
                                     mDb.kategoriDao().delete(kategori);
-//                                    kategoriFragment.retrieveData();
+                                    kategoriFragment.retrieveData();
                                 }
                             });
                             sDialog.dismissWithAnimation();

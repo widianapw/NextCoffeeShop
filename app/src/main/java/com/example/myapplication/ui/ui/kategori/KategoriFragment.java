@@ -121,6 +121,9 @@ public class KategoriFragment extends Fragment {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
             @Override
             public void run() {
+                if(null == getActivity()) {
+                    return;
+                }
                 final List<Kategori> data = mDb.kategoriDao().loadAllKategoris();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                     Objects.requireNonNull(getActivity()).runOnUiThread(new Runnable() {

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.database.AppDatabase;
 import com.example.myapplication.database.AppExecutors;
@@ -88,9 +89,8 @@ public class ProfileEdit extends AppCompatActivity {
                 );
                 data.setId(id_user);
                 data.setPassword(user.getPassword());
-
                 mDb.userDao().updateUser(data);
-                finish();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
     }
