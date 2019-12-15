@@ -67,22 +67,13 @@ public class ReportFragment extends Fragment {
     }
 
     public void retrieveData() {
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-            @Override
-            public void run() {
-//                getActivity().runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-                        final List<DetailTransaksiDao.Terlaris> data = mDb.detailTransaksiDao().readDataTerlaris();
-                        mAdapter.setTasks(data);
-                        final List<DetailTransaksiDao.ReportTahun> data1 = mDb.detailTransaksiDao().reportTahun();
-                        Log.e("da",""+data1);
-                        mAdapterTahun.setTasksReport(data1);
-//                    }
-//                });
+        mDb = AppDatabase.getDatabase(getContext());
+        final List<DetailTransaksiDao.Terlaris> data = mDb.detailTransaksiDao().readDataTerlaris();
+        mAdapter.setTasks(data);
+        final List<DetailTransaksiDao.ReportTahun> data1 = mDb.detailTransaksiDao().reportTahun();
+        Log.e("da",""+data1);
+        mAdapterTahun.setTasksReport(data1);
 
-            }
-        });
     }
 
 }

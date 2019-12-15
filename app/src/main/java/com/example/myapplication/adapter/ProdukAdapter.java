@@ -2,6 +2,7 @@ package com.example.myapplication.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,7 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        Log.e("AS", "onBindViewHolder: "+ mProdukList.get(position).produk.getNama_produk());
         holder.mNama.setText(mProdukList.get(position).produk.getNama_produk());
         holder.mHarga.setText(String.valueOf(mProdukList.get(position).produk.getHarga()));
         holder.mKategori.setText(mProdukList.get(position).kategoris.get(0).getKategori());
@@ -87,14 +89,17 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                     sDialog.setConfirmButton("Ya", new SweetAlertDialog.OnSweetClickListener() {
                         @Override
                         public void onClick(SweetAlertDialog sweetAlertDialog) {
-                            final Produk produk = mProdukList.get(getAdapterPosition()).produk;
-                            AppExecutors.getInstance().diskIO().execute(new Runnable() {
-                                @Override
-                                public void run() {
-                                    mDb.produkDao().delete(produk);
+                            onDeleteData(getAdapterPosition());
+//                            final Produk produk = mProdukList.get(getAdapterPosition()).produk;
+//                            AppExecutors.getInstance().diskIO().execute(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    mDb.produkDao().delete(produk);
+//                                    notifyDataSetChanged();
 //                                    produkFragment.retrieveData();
-                                }
-                            });
+//
+//                                }
+//                            });
                             sDialog.dismissWithAnimation();
                         }
                     });
@@ -113,7 +118,16 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
 
     public void setTasks(List<ProdukWithRelations> produkList){
         mProdukList = produkList;
+
         notifyDataSetChanged();
     }
 
+    private void onDeleteData(int position){
+        mDb = AppDatabase.getDatabase(context);
+        final Produk produk = mProdukList.get(position).produk;
+        mDb.produkDao().delete(produk);
+        mProdukList.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, mProdukList.size());
+    }
 }

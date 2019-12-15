@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.room.Room;
 
 import com.example.myapplication.LoginActivity;
 import com.example.myapplication.R;
@@ -46,13 +47,9 @@ public class ProfileFragment extends Fragment {
         mName = root.findViewById(R.id.tvNama);
         btnEditProfil = root.findViewById(R.id.btnEditProfil);
         btnLogout = root.findViewById(R.id.btnLogout);
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-            @Override
-            public void run() {
-                user = mDb.userDao().getUser(id_user);
-                setUiData(user);
-            }
-        });
+
+        user = mDb.userDao().getUser(id_user);
+        setUiData(user);
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override

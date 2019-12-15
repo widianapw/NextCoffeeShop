@@ -96,14 +96,7 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
                     sDialog.setConfirmButton("Ya", new SweetAlertDialog.OnSweetClickListener() {
                         @Override
                         public void onClick(SweetAlertDialog sweetAlertDialog) {
-                            final Kategori kategori = mKategoriList.get(getAdapterPosition());
-                            AppExecutors.getInstance().diskIO().execute(new Runnable() {
-                                @Override
-                                public void run() {
-                                    mDb.kategoriDao().delete(kategori);
-                                    kategoriFragment.retrieveData();
-                                }
-                            });
+                            onDeleteData(getAdapterPosition());
                             sDialog.dismissWithAnimation();
                         }
                     });
@@ -118,5 +111,15 @@ public class KategoriAdapter extends RecyclerView.Adapter<KategoriAdapter.MyView
             });
 
         }
+    }
+
+    private void onDeleteData(int position){
+        mDb = AppDatabase.getDatabase(context);
+        final Kategori kategori = mKategoriList.get(position);
+        mDb.kategoriDao().delete(kategori);
+        kategoriFragment.retrieveData();
+        mKategoriList.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, mKategoriList.size());
     }
 }
