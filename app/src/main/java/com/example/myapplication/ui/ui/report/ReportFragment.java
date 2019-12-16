@@ -28,16 +28,10 @@ import java.util.List;
 
 public class ReportFragment extends Fragment {
 
-    private RecyclerView recyclerView;
     private AppDatabase mDb;
-    private RecyclerView.LayoutManager layoutManager;
-    //    private RecyclerView.Adapter adapter;
-    private ArrayList<DetailTransaksiDao.Terlaris> daftarTerlaris;
-
     View mView;
     ReportItemTerlarisAdapter mAdapter;
     ReportTahunAdapter mAdapterTahun;
-
 
     @Nullable
     @Override
@@ -57,7 +51,6 @@ public class ReportFragment extends Fragment {
         return mView;
 
     }
-
 
     @Override
     public void onResume() {

@@ -52,9 +52,9 @@ public class KeranjangAdapter extends RecyclerView.Adapter<KeranjangAdapter.MyVi
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.mNama.setText(mKeranjangList.get(position).produks.get(0).getNama_produk());
-        holder.mHarga.setText(String.valueOf(mKeranjangList.get(position).produks.get(0).getHarga()) );
+        holder.mHarga.setText("Rp "+mKeranjangList.get(position).produks.get(0).getHarga());
         holder.mQty.setText(String.valueOf(mKeranjangList.get(position).keranjang.getQty()));
-        holder.mSub.setText(String.valueOf(mKeranjangList.get(position).produks.get(0).getHarga() * mKeranjangList.get(position).keranjang.getQty()));
+        holder.mSub.setText("Rp "+mKeranjangList.get(position).produks.get(0).getHarga() * mKeranjangList.get(position).keranjang.getQty());
 
     }
 

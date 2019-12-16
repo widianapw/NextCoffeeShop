@@ -26,7 +26,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=":"
+                    android:text=": Rp "
                     style="@style/viewParent.headerText"/>
                 <EditText
                     android:id="@+id/etUang"
@@ -48,13 +48,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=": "
+                    android:text=": Rp "
                     style="@style/viewParent.headerText"/>
                 <TextView
                     android:id="@+id/tv_total_belanja"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rp 100"
+                    android:text="0"
                     style="@style/viewParent.headerText"/>
             </TableRow>
             <TableRow>
@@ -67,13 +67,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=": "
+                    android:text=": Rp "
                     style="@style/viewParent.headerText"/>
                 <TextView
                     android:id="@+id/tv_uang_kembalian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="100"
+                    android:text="0"
                     style="@style/viewParent.headerText"/>
             </TableRow>
         </TableLayout>

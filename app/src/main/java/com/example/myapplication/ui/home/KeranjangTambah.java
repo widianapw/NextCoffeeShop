@@ -8,19 +8,24 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.database.AppDatabase;
 import com.example.myapplication.database.AppExecutors;
 import com.example.myapplication.model.Keranjang;
 import com.example.myapplication.model.KeranjangWithRelations;
+import com.example.myapplication.model.Produk;
+import com.example.myapplication.model.ProdukWithRelations;
 
 public class KeranjangTambah extends AppCompatActivity {
     AppDatabase mDb;
     EditText mKuantiti;
     Button mSubmit;
+    TextView mNama;
     int mIdProduk;
     Intent intent;
+    ProdukWithRelations produk;
     KeranjangWithRelations keranjangWithRelations;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,7 @@ public class KeranjangTambah extends AppCompatActivity {
         intent = getIntent();
         mIdProduk = intent.getIntExtra("insert",-1);
         mKuantiti = findViewById(R.id.etKuantitiTambah);
-
+        mNama = findViewById(R.id.labelNamaProdukTambah);
         mSubmit = findViewById(R.id.btnSaveKuantitiTambah);
         mSubmit = findViewById(R.id.btnSaveKuantitiTambah);
         mSubmit.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +44,8 @@ public class KeranjangTambah extends AppCompatActivity {
                 onSubmit();
             }
         });
+        produk = mDb.produkDao().loadProdukById(mIdProduk);
+        mNama.setText(produk.produk.getNama_produk());
     }
 
     public void onSubmit() {

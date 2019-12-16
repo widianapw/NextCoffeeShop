@@ -7,11 +7,22 @@
     android:layout_margin="10dp"
     >
     <TextView
+        android:id="@+id/labelNamaProdukEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/viewParent.headerText"
+        android:text="Nama Produk"
+        />
+    <TextView
+        android:layout_below="@+id/labelNamaProdukEdit"
         android:id="@+id/labelKuantitiEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
         android:text="Kuantiti"
-        style="@style/viewParent.headerText"/>
+        android:textStyle="bold"
+        android:textSize="20dp"
+        />
     <EditText
         android:id="@+id/etKuantitiEdit"
         android:layout_below="@id/labelKuantitiEdit"

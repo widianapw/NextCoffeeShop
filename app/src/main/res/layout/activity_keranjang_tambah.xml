@@ -4,14 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:layout_margin="30dp"
     >
     <TextView
+        android:id="@+id/labelNamaProdukTambah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Produk"
+        style="@style/viewParent.headerText"/>
+    <TextView
+        android:layout_below="@+id/labelNamaProdukTambah"
         android:id="@+id/labelKuantiti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kuantiti"
-        style="@style/viewParent.headerText"/>
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        />
     <EditText
         android:id="@+id/etKuantitiTambah"
         android:layout_below="@id/labelKuantiti"

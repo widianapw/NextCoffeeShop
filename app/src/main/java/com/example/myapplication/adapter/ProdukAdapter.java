@@ -90,16 +90,6 @@ public class ProdukAdapter extends RecyclerView.Adapter<ProdukAdapter.MyViewHold
                         @Override
                         public void onClick(SweetAlertDialog sweetAlertDialog) {
                             onDeleteData(getAdapterPosition());
-//                            final Produk produk = mProdukList.get(getAdapterPosition()).produk;
-//                            AppExecutors.getInstance().diskIO().execute(new Runnable() {
-//                                @Override
-//                                public void run() {
-//                                    mDb.produkDao().delete(produk);
-//                                    notifyDataSetChanged();
-//                                    produkFragment.retrieveData();
-//
-//                                }
-//                            });
                             sDialog.dismissWithAnimation();
                         }
                     });

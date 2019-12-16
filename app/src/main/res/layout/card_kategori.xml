@@ -12,13 +12,22 @@
         android:layout_width="wrap_content"
         android:layout_height="75dp">
         <TextView
+            android:id="@+id/ktgr"
+            android:text="Kategori"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="-10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_below="@+id/ktgr"
             android:id="@+id/nama_kategori"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Cofeee"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:padding="20dp"
+            android:layout_marginLeft="20dp"
             android:gravity="center"/>
 
         <ImageView
