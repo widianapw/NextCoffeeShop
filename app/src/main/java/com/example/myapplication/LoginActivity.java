@@ -15,9 +15,11 @@ import com.example.myapplication.database.AppDatabase;
 import com.example.myapplication.database.AppExecutors;
 import com.example.myapplication.model.User;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class LoginActivity extends AppCompatActivity {
-    EditText mUsername,mPassword;
-    Button mLogin,mRegister;
+    EditText mUsername, mPassword;
+    Button mLogin, mRegister;
     AppDatabase mDb;
     User user;
 
@@ -35,10 +37,10 @@ public class LoginActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
         session = sharedPreferences.getBoolean(SESSION_STATUS, false);
-        id_user = sharedPreferences.getInt(String.valueOf(ID_USER),0);
+        id_user = sharedPreferences.getInt(String.valueOf(ID_USER), 0);
 
-        if (session){
-            Log.e("as",""+id_user);
+        if (session) {
+            Log.e("as", "" + id_user);
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             intent.putExtra(String.valueOf(ID_USER), id_user);
             finish();
@@ -53,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),RegisterActivity.class);
+                Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(i);
             }
         });
@@ -66,22 +68,34 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void onSubmit(){
+    public void onSubmit() {
         mDb = AppDatabase.getDatabase(getApplicationContext());
-        AppExecutors.getInstance().diskIO().execute(new Runnable() {
-            @Override
-            public void run() {
-                user = mDb.userDao().loginUser(mUsername.getText().toString(), mPassword.getText().toString());
-                int id_user = user.getId();
-                if (id_user > 0 ){
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean(SESSION_STATUS, true);
-                    editor.putInt(String.valueOf(ID_USER), user.getId());
-                    editor.commit();
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(i);
+        user = mDb.userDao().loginUser(mUsername.getText().toString(), mPassword.getText().toString());
+        if (user == null){
+            new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.ERROR_TYPE)
+                    .setTitleText("Oops...")
+                    .setContentText("Username dan Password Salah!")
+                    .show();
+        }
+        else{
+            AppExecutors.getInstance().diskIO().execute(new Runnable() {
+                @Override
+                public void run() {
+                    user = mDb.userDao().loginUser(mUsername.getText().toString(), mPassword.getText().toString());
+                    int id_user = user.getId();
+                    if (id_user > 0) {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean(SESSION_STATUS, true);
+                        editor.putInt(String.valueOf(ID_USER), user.getId());
+                        editor.commit();
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
+                    }
+
+
                 }
-            }
-        });
+            });
+        }
+
     }
 }
